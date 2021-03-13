@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title> Inicio</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-button color="danger" routerLink="/saludo">
+        saludo
+    </ion-button>
+
+    <ion-button color="danger" routerLink="/operaciones-mat">
+        operaciones
+    </ion-button>
+
+
+    <ion-title> Integrante: Maicol Jossa</ion-title>
+    <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Apellido:</ion-label>
+        <ion-input [(ngModel)]="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Celular:</ion-label>
+        <ion-input [(ngModel)]="celular"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-button size="small" color="success" (click)="guardarDatos()">
+        Guardar
+    </ion-button>
+
+    <ion-list>
+        <ion-item *ngFor="let usuario of usuarios">
+            <ion-label>{{ usuario.nombre }}</ion-label>
+            <ion-label>{{ usuario.apellido }}</ion-label>
+            <ion-label>{{ usuario.celular }}</ion-label>
+            <ion-label>{{ usuario.email }}</ion-label>
+            <ion-button size="small" color="success" (click)="edit(usuario)">
+                Editar
+            </ion-button>
+            <ion-button size="small" color="danger" (click)="delete(usuario)">
+                Eliminar
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
