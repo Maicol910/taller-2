@@ -12,22 +12,27 @@ export class SaludoPage implements OnInit {
   constructor(public alertController: AlertController) { }
   
   async saludo() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'SALUDOS',
-      message: 'Hola',
-      buttons: ['OK'],
-      inputs:[
-        {
-          name:'nombre',
-          type: 'text',
-          value:this.nombre
-        }
-      ]
-    });
-    
-    await alert.present();
+    if(this.nombre ==""  || this.nombre == null){
+      const alert2 = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'SALUDOS',
+        message: 'El campo nombre se encuentra vacio, no te puedo saldar :( ',
+        buttons: ['OK'],
+      });
+      await alert2.present();
+    }else{
+      if(this.nombre==this.nombre){
+        const alert = await this.alertController.create({
+          cssClass: 'my-custom-class',
+          header: 'SALUDOS',
+          message: 'Hola'+ ' ' + this.nombre,
+          buttons: ['OK'],
+        });
+        await alert.present();
+    }
   }
+}
+
   
   ngOnInit() {
   }
