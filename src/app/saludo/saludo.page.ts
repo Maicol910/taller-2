@@ -16,7 +16,7 @@ export class SaludoPage implements OnInit {
       const alert2 = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'SALUDOS',
-        message: 'El campo nombre se encuentra vacio, no te puedo saldar :( ',
+        message: 'El campo nombre se encuentra vacio, no te puedo saludar :( ',
         buttons: ['OK'],
       });
       await alert2.present();
