@@ -23,11 +23,7 @@
     <ion-button size="small" color="success" (click)="operaciones()">
         Calcular
     </ion-button>
-
     <ion-list>
-        <ion-item *ngFor="let resultado1 of resultado2">
-            <ion-label>{{ resultado1.resultado }}</ion-label>
-        </ion-item>
+        {{this.resultado}}
     </ion-list>
-
 </ion-content>
