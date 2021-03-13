@@ -20,8 +20,14 @@
         <ion-label>Numero 2:</ion-label>
         <ion-input [(ngModel)]="numero2"></ion-input>
     </ion-item>
-    <ion-button size="small" color="success">
+    <ion-button size="small" color="success" (click)="operaciones()">
         Calcular
     </ion-button>
+
+    <ion-list>
+        <ion-item *ngFor="let resultado1 of resultado2">
+            <ion-label>{{ resultado1.resultado }}</ion-label>
+        </ion-item>
+    </ion-list>
 
 </ion-content>
