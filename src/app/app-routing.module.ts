@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'operaciones-mat',
     loadChildren: () => import('./operaciones-mat/operaciones-mat.module').then( m => m.OperacionesMatPageModule)
   },
+  {
+    path: 'parcial',
+    loadChildren: () => import('./parcial/parcial.module').then( m => m.ParcialPageModule)
+  },
 
 ];
 
