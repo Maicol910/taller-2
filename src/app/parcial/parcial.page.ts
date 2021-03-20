@@ -10,8 +10,8 @@ export class ParcialPage implements OnInit {
   constructor(public navCtrl: NavController) {
   }  
   
-  resultado=null;
-  bandera=null;
+  resultado=0;
+  bandera=0;
   datos=[]
  
   numero1(numero1){
@@ -26,17 +26,17 @@ export class ParcialPage implements OnInit {
   
   operaciones(simbol){
     this.datos.push(simbol)
-    this.bandera=null
+    this.bandera=0
   }
 
   eliminar(){
     this.datos=[]
-    this.resultado=null
+    this.resultado=0
   }
 
   resultadoFinal(){
     this.resultado=eval(this.datos.join(''))
-    this.bandera=null
+    this.bandera=0
   }
 
   ngOnInit() {
