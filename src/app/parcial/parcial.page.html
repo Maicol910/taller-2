@@ -10,69 +10,64 @@
 <ion-content>
     <ion-grid>
         <ion-row>
-            <ion-button size="small" color="success">
-                0
-            </ion-button>
+            <ion-input type="text" placeholder="0" name="resultado" [(ngModel)]="resultado"></ion-input>
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-button color="primary" onclick="add('1')">1</ion-button>
+                <ion-button color="primary" (click)="numero1(1)">1</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="primary" onclick="add('2')">2</ion-button>
+                <ion-button color="primary" (click)="numero1(2)">2</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="primary" onclick="add('3')">3</ion-button>
+                <ion-button color="primary" (click)="numero1(3)">3</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="tertiary" onclick="add('+')">+</ion-button>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-button color="primary" onclick="add('4')">4</ion-button>
-            </ion-col>
-            <ion-col>
-                <ion-button color="primary" onclick="add('5')">5</ion-button>
-            </ion-col>
-            <ion-col>
-                <ion-button color="primary" onclick="add('6')">6</ion-button>
-            </ion-col>
-            <ion-col>
-                <ion-button color="tertiary" onclick="add('-')">-</ion-button>
+                <ion-button color="tertiary" (click)="operaciones('+')">+</ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-button color="primary" onclick="add('7')">7</ion-button>
+                <ion-button color="primary" (click)="numero1(4)">4</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="primary" onclick="add('8')">8</ion-button>
+                <ion-button color="primary" (click)="numero1(5)">5</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="primary" onclick="add('9')">9</ion-button>
+                <ion-button color="primary" (click)="numero1(6)">6</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="tertiary" onclick="add('*')">*</ion-button>
+                <ion-button color="tertiary" (click)="operaciones('-')">-</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button color="primary" (click)="numero1(7)">7</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button color="primary" (click)="numero1(8)">8</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button color="primary" (click)="numero1(9)">9</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button color="tertiary" (click)="operaciones('*')">*</ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="9">
-                <ion-button color="primary" onclick="add('0')">0</ion-button>
+                <ion-button color="primary" (click)="numero1(0)">0</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="tertiary" onclick="add('/')">/</ion-button>
+                <ion-button color="tertiary" (click)="operaciones('/')">/</ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="6">
-                <ion-button color="danger" onclick="del()">AC</ion-button>
+                <ion-button color="danger" (click)="eliminar()">AC</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button color="primary" onclick="add('.')">.</ion-button>
-            </ion-col>
-            <ion-col>
-                <ion-button color="success" onclick="calc()">=</ion-button>
+                <ion-button color="tertiary" (click)="resultadoFinal()">=</ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>
