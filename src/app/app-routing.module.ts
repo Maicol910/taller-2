@@ -27,7 +27,14 @@ const routes: Routes = [
     path: 'parcial',
     loadChildren: () => import('./parcial/parcial.module').then( m => m.ParcialPageModule)
   },
-
+  {
+    path: 'storage',
+    loadChildren: () => import('./storage/storage.module').then( m => m.StoragePageModule)
+  },
+  {
+    path: 'taller',
+    loadChildren: () => import('./taller/taller.module').then( m => m.TallerPageModule)
+  }
 ];
 
 @NgModule({

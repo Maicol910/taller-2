@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>storage</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-item>
+        <ion-label>Texto para almacenar:</ion-label>
+        <ion-input [(ngModel)]="textoAlmacenado"></ion-input>
+    </ion-item>
+
+
+    <ion-button size="small" color="success" (click)="guardarDato()">
+        Guardar
+    </ion-button>
+
+    <ion-list>
+        <ion-label>{{ textoAlmacenado }}</ion-label>
+    </ion-list>
+</ion-content>
