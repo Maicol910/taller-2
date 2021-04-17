@@ -32,8 +32,16 @@ const routes: Routes = [
     loadChildren: () => import('./storage/storage.module').then( m => m.StoragePageModule)
   },
   {
+    path: 'gastos',
+    loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
+  },
+  {
     path: 'taller',
-    loadChildren: () => import('./taller/taller.module').then( m => m.TallerPageModule)
+    loadChildren: () => import('./taller/taller.module').then( m => m.TALLERPageModule)
+  },
+  {
+    path: 'ingresos',
+    loadChildren: () => import('./ingresos/ingresos.module').then( m => m.INGRESOSPageModule)
   }
 ];
 

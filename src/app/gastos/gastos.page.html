@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>GASTOS</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Descripcion:</ion-label>
+        <ion-input [(ngModel)]="descripcion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Fecha:</ion-label>
+        <ion-datetime placeholder="Seleccione la fecha" value="{{fecha | date : 'dd/MM/YYYY' }}" [(ngModel)]="fecha"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Valor:</ion-label>
+        <ion-input placeholder="$" [(ngModel)]="valor"></ion-input>
+    </ion-item>
+
+    <ion-button size="small" color="success" (click)="guardarGastos()">
+        Guardar_Gasto
+        <ion-icon name="save-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button size="small" color="danger" routerLink="/taller">
+        Ver Productos
+        <ion-icon name="eye-outline"></ion-icon>
+    </ion-button>
+
+    <ion-list>
+        <ion-item color="secondary">
+            <ion-title>TABLA GASTOS</ion-title>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item>
+            <ion-label color="secondary">NOMBRE</ion-label>
+            <ion-label color="secondary">DESCRIPCION</ion-label>
+            <ion-label color="secondary">FECHA</ion-label>
+            <ion-label color="secondary">VALOR</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item *ngFor="let gasto of gastos">
+            <ion-label>{{ gasto.nombre }}</ion-label>
+            <ion-label>{{ gasto.descripcion }}</ion-label>
+            <ion-label>{{ gasto.fecha }}</ion-label>
+            <ion-label>$ {{ gasto.valor }}</ion-label>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
