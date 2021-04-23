@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -8,36 +8,6 @@
 </ion-header>
 
 <ion-content>
-    <ion-item>
-        <ion-label>Nombre:</ion-label>
-        <ion-input [(ngModel)]="nombres"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Descripcion:</ion-label>
-        <ion-input [(ngModel)]="descripciones"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Fecha:</ion-label>
-        <ion-datetime placeholder="Seleccione la fecha" value="{{fechas | date : 'dd/MM/YYYY' }}" [(ngModel)]="fechas"></ion-datetime>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Valor:</ion-label>
-        <ion-input placeholder="$" [(ngModel)]="valores"></ion-input>
-    </ion-item>
-
-    <ion-button size="small" color="success" (click)="guardarIngresos()">
-        Guardar_Ingreso
-        <ion-icon name="save-outline"></ion-icon>
-    </ion-button>
-
-    <ion-button size="small" color="danger" routerLink="/taller">
-        Ver Productos
-        <ion-icon name="eye-outline"></ion-icon>
-    </ion-button>
-
     <ion-list>
         <ion-item color="secondary">
             <ion-title>TABLA INGRESOS</ion-title>

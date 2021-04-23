@@ -7,34 +7,13 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './ingresos.page.html',
   styleUrls: ['./ingresos.page.scss'],
 })
-export class INGRESOSPage implements OnInit {
-  nombres = ''
-  descripciones = ''
-  fechas = ''
-  valores = ''
+export class INGRESOSPage{
   ingresos = []
 
   constructor(private storage: Storage) { }
 
-  async ngOnInit(){
+  async ionViewWillEnter(){
     await this.storage.create()
     this.ingresos = await this.storage.get('ingresos')
   }
-  async guardarIngresos(){
-    if(this.ingresos == null){
-      this.ingresos = []
-    }
-    this.ingresos.push({
-      nombres : this.nombres,
-      descripciones : this.descripciones,
-      fechas : this.fechas,
-      valores : this.valores
-    })
-    await this.storage.set('ingresos', this.ingresos)
-    this.nombres = ''
-    this.descripciones = ''
-    this.fechas = ''
-    this.valores = ''
-  }
-
 }
