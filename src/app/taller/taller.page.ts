@@ -7,26 +7,15 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './taller.page.html',
   styleUrls: ['./taller.page.scss'],
 })
-export class TALLERPage implements OnInit {
+export class TALLERPage{
   ingresos = []
   gastos = []
 
   constructor(private storage: Storage) { }
-  
-  async ngOnInit(){
-    await this.storage.create()
-    this.gastos = await this.storage.get('gastos')
-    this.ingresos = await this.storage.get('ingresos')
-  }
 
-  async doRefresh(event) {
-    this.gastos = await this.storage.get('gastos')
+  async ionViewWillEnter(){
+    await this.storage.create()
+    this.gastos = await this.storage.get('gastos'),
     this.ingresos = await this.storage.get('ingresos')
-    setTimeout(()=>{
-      event.target.complete();
-    }, 1500);
   }
-  
-  
-  
 }

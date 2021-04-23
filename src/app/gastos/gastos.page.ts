@@ -15,7 +15,7 @@ export class GastosPage implements OnInit {
   gastos = []
 
   constructor(private storage: Storage) { }
-
+  
   async ngOnInit() {
     await this.storage.create()
     this.gastos = await this.storage.get('gastos')
@@ -35,6 +35,7 @@ export class GastosPage implements OnInit {
     this.nombre = ''
     this.descripcion = ''
     this.fecha = ''
-    this.valor = '' 
+    this.valor = ''
   }
+  
 }

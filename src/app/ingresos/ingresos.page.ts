@@ -16,7 +16,7 @@ export class INGRESOSPage implements OnInit {
 
   constructor(private storage: Storage) { }
 
-  async ngOnInit() {
+  async ngOnInit(){
     await this.storage.create()
     this.ingresos = await this.storage.get('ingresos')
   }
